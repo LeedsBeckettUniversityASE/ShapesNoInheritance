@@ -31,7 +31,7 @@ namespace ShapesInheritanceExample
 
                 c = (Circle)circles[i];
                 c.draw(g);
-                Console.WriteLine(c.Description());
+                Console.WriteLine(c.ToString());
 
             }
             for (int i = 0; i < rectangles.Count; i++)
@@ -40,7 +40,7 @@ namespace ShapesInheritanceExample
 
                 r = (Rect)rectangles[i];
                 r.draw(g);
-                Console.WriteLine(r.Description());
+                Console.WriteLine(r.ToString());
 
             }
         }
