@@ -12,7 +12,7 @@ namespace ShapesInheritanceExample
     {
         protected int radius;
        
-        protected int x, y; //note I could use c# properties for this
+       
         public Circle(Color colour, int x, int y, int radius): base(colour, x, y)
         {
 
