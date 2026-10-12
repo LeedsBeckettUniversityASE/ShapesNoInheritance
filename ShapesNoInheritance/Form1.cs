@@ -6,17 +6,17 @@ namespace ShapesInheritanceExample
     public partial class Form1 : Form
     {
 
-        ArrayList circles = new ArrayList();
-        ArrayList rectangles = new ArrayList();
+        ArrayList Shapes = new ArrayList();
+       
         public Form1()
         {
             InitializeComponent();
 
             //add a few shapes
-            circles.Add(new Circle(Color.Purple, 10, 100, 100)); //create a red circle at (10,100) of radius 100
-            circles.Add(new Circle(Color.Chartreuse, 100, 10, 50)); //apparently it's green
-            rectangles.Add(new Rect(Color.Blue, 150, 150, 50, 100));
-            circles.Add(new Circle(Color.Red, 10, 100, 100));
+            Shapes.Add(new Circle(Color.Purple, 10, 100, 100)); //create a red circle at (10,100) of radius 100
+            Shapes.Add(new Circle(Color.Chartreuse, 100, 10, 50)); //apparently it's green
+            Shapes.Add(new Rect(Color.Blue, 150, 150, 50, 100));
+            Shapes.Add(new Circle(Color.Red, 10, 100, 100)); //why does the rectangle disappear now that we've changed the handling code?
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -25,24 +25,16 @@ namespace ShapesInheritanceExample
             Graphics g = e.Graphics;
 
 
-            for (int i = 0; i < circles.Count; i++)
+            for (int i = 0; i < Shapes.Count; i++)
             {
-                Circle c;
+                Shape S;
 
-                c = (Circle)circles[i];
-                c.draw(g);
-                Console.WriteLine(c.ToString());
+                S = (Shape)Shapes[i];
+                S.draw(g);
+                Console.WriteLine(S.ToString());
 
             }
-            for (int i = 0; i < rectangles.Count; i++)
-            {
-                Rect r;
-
-                r = (Rect)rectangles[i];
-                r.draw(g);
-                Console.WriteLine(r.ToString());
-
-            }
+           
         }
     }
 }
